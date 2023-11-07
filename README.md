@@ -21,3 +21,18 @@ In order to build the documentation locally you need to install Doxygen, Sphinx 
 ## License
 
 This firmware is released under the [Apache-2.0 License](LICENSE).
+
+
+## To build and run
+```bash
+docker build -t zephyr-project .
+docker run -it --rm zephyr-project
+```
+
+## To flash
+```bash
+docker run -it --rm --privileged -v /dev/bus/usb:/dev/bus/usb zephyr-project
+docker ps
+dockder exec -it zephyr-project-1 west flash
+```
+
